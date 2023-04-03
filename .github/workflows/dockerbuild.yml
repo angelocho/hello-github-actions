@@ -4,12 +4,10 @@ on:
     branches: [main]
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: Angeldesktop
     steps:
     - uses: actions/checkout@v2
     - name: Construir imagen Docker
       run: docker build -t mi-aplicacion .
     - name: Ejecutar pruebas con Docker
       run: docker run -d mi-aplicacion -p 8080:80
-    - name: Dime la ip
-      run: echo ${{ github. runner. ip_address }}
