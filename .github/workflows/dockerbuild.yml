@@ -10,4 +10,5 @@ jobs:
     - name: Construir imagen Docker
       run: docker build -t mi-aplicacion .
     - name: Ejecutar pruebas con Docker
-      run: docker run -d mi-aplicacion -p 8080:80
+      run: docker run -d -p 80:80 mi-aplicacion
+
