@@ -25,6 +25,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       - name: Construir imagen Docker
-        run: docker build -t mi-aplicacion .
+        run: docker-compose build
       - name: Ejecutar pruebas con Docker
-        run: docker run -d -p 80:80 mi-aplicacion
+        run: docker-compose up -d

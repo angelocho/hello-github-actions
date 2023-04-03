@@ -2,6 +2,6 @@ version: "3"
 services:
   web:
     build: .
-    image: ghcr.io/angelocho/hello-2048/nginx-public-html:v1
+    image: mi-aplicacion
     ports:
       - "80:80"
