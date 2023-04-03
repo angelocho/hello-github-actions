@@ -3,7 +3,7 @@ on:
   push:
     branches: [main]
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -11,4 +11,8 @@ jobs:
       run: docker build -t mi-aplicacion .
     - name: Ejecutar pruebas con Docker
       run: docker run -d -p 80:80 mi-aplicacion
-
+    - name: Deploy on github pages
+        uses: angelocho/github-pages-deploy-action@4.1.0
+        with:
+          branch: main
+          folder: public_html
