@@ -12,7 +12,7 @@ jobs:
     - name: Ejecutar pruebas con Docker
       run: docker run -d -p 80:80 mi-aplicacion
     - name: Deploy on github pages
-        uses: angelocho/github-pages-deploy-action@4.1.0
+        uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
-          branch: main
-          folder: public_html
+          branch: gh-pages
+          folder: build
