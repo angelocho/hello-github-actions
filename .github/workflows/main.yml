@@ -24,8 +24,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      - name: Compilar y probar la aplicación con Docker
-      - uses: actions/checkout@v3
       - name: Construir imagen Docker
         run: docker build -t mi-aplicacion .
       - name: Ejecutar pruebas con Docker
