@@ -15,4 +15,6 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - run: docker build . -t webserver
+      - run: docker run -d -p 8080:8080 webserver
       - run: echo "🍏 This job's status is ${{ job.status }}."
