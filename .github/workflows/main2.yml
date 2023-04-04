@@ -16,8 +16,7 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
-        cache: maven
-        
+
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
@@ -26,9 +25,8 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: junit-test-results
-        path: target/surefire-reports/*.xml   
-        
-        
+        path: target/surefire-reports/*.xml
+
     - name: Deploy App
       if: ${{ success() }}
       uses: ./.github/workflows/deploymaven.yml@v1
