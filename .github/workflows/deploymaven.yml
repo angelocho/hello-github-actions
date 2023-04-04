@@ -1,6 +1,9 @@
 name: Workflow 2
 on:
-  workflow_dispatch:
+  workflow_call:
+    workflows: ["main2.yml"]
+    types:
+      - completed
 jobs:
   deploy:
     runs-on: ubuntu-latest
