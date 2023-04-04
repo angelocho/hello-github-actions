@@ -1,0 +1,13 @@
+name: Workflow 2
+on:
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: success()
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+    - name: Deploy App
+      run: |
+        echo "App Deployed"
