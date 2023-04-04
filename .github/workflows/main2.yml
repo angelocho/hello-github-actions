@@ -29,7 +29,8 @@ jobs:
 
     - name: Deploy App
       if: ${{ success() }}
-      uses: actions/workflow-dispatch@v2
+      uses: actions/workflow_dispatch@v2
       with:
-        workflow: ./.github/workflows/deploymaven.yml
+        workflow: deploymaven.yml
+        ref: main
         token: ${{ secrets.GITHUB_TOKEN }}
