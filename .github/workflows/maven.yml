@@ -32,7 +32,7 @@ jobs:
 
     - name: Deploy App
       if: ${{ success() }}
-      uses: angelocho/workflow-dispatch@v1
+      uses: peter-evans/workflow-dispatch@v1
       with:
         workflow: deploymaven.yml
         token: ${{ secrets.GITHUB_TOKEN }}
