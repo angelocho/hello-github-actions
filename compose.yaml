@@ -1,7 +1,7 @@
 version: "3"
 services:
-  web:
+  amazoncorrettospring:
     build: .
-    image: mi-aplicacion
+    image: ghcr.io/angelocho/hello-spring/amazoncorrettospring:latest
     ports:
-      - "80:80"
+      - "8080:8080"
