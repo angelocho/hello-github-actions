@@ -1,3 +1,4 @@
+
 name: Test Workflow
 on:
   push:
@@ -22,14 +23,16 @@ jobs:
 
     - name: Publish JUnit test results
       if: always()
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: junit-test-results
         path: target/surefire-reports/*.xml
 
     - name: Deploy App
       if: ${{ success() }}
-      uses: ./.github/workflows/deploymaven.yml@v1
+      uses: actions/workflow_dispatch@v2
       with:
         workflow: deploymaven.yml
+        ref: main
         token: ${{ secrets.GITHUB_TOKEN }}
+
